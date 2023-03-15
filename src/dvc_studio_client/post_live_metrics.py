@@ -50,7 +50,9 @@ def get_studio_token_and_repo_url():
     if studio_token is None:
         logger.debug("STUDIO_TOKEN not found. Skipping `post_studio_live_metrics`")
         return None, None
-
+    import os
+    logger.debug(os.environ)
+    print(os.environ)
     studio_repo_url = getenv(STUDIO_REPO_URL, None)
     if studio_repo_url is None:
         logger.debug(f"`{STUDIO_REPO_URL}` not found. Trying to automatically find it.")
